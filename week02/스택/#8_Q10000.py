@@ -1,17 +1,16 @@
 #10000
 import sys
+
 n = int(sys.stdin.readline())
 circles = []
+
 for _ in range(n):
-    circles.append(list(map(int,sys.stdin.readline().split())))
+    x, r = map(int, input().split())
+    start = x - r
+    radi = 2 * r
+    circles.append((start, radi))
 
-result = []
-for circle in circles:
-    L = circle[0] + circle[1]
-    R = circle[0] - circle[1]
-    if L not in result:
-        result.append(L)
-    if R not in result:
-        result.append(R)
+circles.sort()
 
-print(len(result))
+
+print(circles)
