@@ -13,4 +13,3 @@ for _ in range(n):
             print(0)
         else:
             print(-heapq.heappop(heap))
-

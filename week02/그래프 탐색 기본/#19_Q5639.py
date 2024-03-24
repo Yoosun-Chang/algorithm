@@ -1,32 +1,25 @@
 #5639_이진 검색 트리
 import sys
-input = sys.stdin.readline
 sys.setrecursionlimit(10 ** 9)
+input = sys.stdin.readline
 
-arr = []
-
-# 엔터 들어올 때까지 입력
+pre = []
 while True:
     try:
-        x = int(input())
-        arr.append(x)
-    except: 
+        pre.append(int(input()))
+    except:
         break
 
-def solution(A):
-    if len(A) == 0:
+def post(start, end):
+    if start > end:
         return
-    tempL, tempR = [], []
-    mid = A[0] # 첫번째 값을 루트 노드로 설정
-    for i in range(1,len(A)):
-        if A[i] > mid:
-            tempL = A[1:i]
-            tempR = A[i:]
+    mid = end + 1
+    for i in range(start + 1, end + 1):
+        if pre[i] > pre[start]:
+            mid = i
             break
-    else:
-        tempL = A[1:]
-    solution(tempL)
-    solution(tempR)
-    print(mid)
+    post(start + 1, mid - 1) #왼쪽 트리
+    post(mid, end) #오른쪽 트리
+    print(pre[start]) #루트 노드
 
-solution(arr)
+post(0, len(pre) - 1)
