@@ -9,26 +9,46 @@
 # 3. 만약 이미 같은 집합이라면 연결하지 않는다. 
 
 # 프림
-import heapq
-n, m = map(int,input().split())
-graph = [[] for _ in range(n+1)]
-visited = [ 0 for _ in range(n+1)]
-for _ in range(m):
-    a, b, c = map(int, input().split())
-    graph[a].append([c,b])
-    graph[b].append([c,a])
+import heapq, sys
+N, M = map(int,sys.stdin.readline().split())
+
+graph = [[] for _ in range(N+1)] #노드의 개수 + 1
+visited = [ 0 for _ in range(N+1)]
+
+# 1번부터 3번까지 노드가 주어지니
+
+# 0 1 2 3 
+
+
+for _ in range(M):
+    A,B,C = map(int,sys.stdin.readline().split())
+
+    graph[A].append([C,B])
+    graph[B].append([C,A])
+
+# 다익스트라!
 
 answer = 0
 cnt = 0
 
- #다익스트라
-q = [[1,0]]
+q = [[0,1]]
 
-while q :
-    weight,node = heapq.heappop(q)
+
+while q: # q가 아무것도 없어질 때까지!
+
+    if cnt == N:
+        break
+
+    weight,node = heapq.heappop(q) # 최소비용
+
+    # 방문처리!
+
     if visited[node] == 0:
-        visited[node] == 1
+        visited[node] = 1
         answer += weight
         cnt += 1
+
         for nxt in graph[node]:
-            heapq.heappush(q,nxt)
+            heapq.heappush(q,nxt) # 담아주기
+
+print(answer)
