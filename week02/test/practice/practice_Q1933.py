@@ -85,3 +85,5 @@ for point in skyline:
 
 # for r in result:
 #     print(' '.join([str(r[0]), str(r[1])]), end=' ')
+    
+    
