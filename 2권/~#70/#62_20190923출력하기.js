@@ -9,8 +9,6 @@
 5. input을 이용해서는 안됩니다.
 */
 
-//abcdefgh
-//20190923
 const user_s = 'aacdddddddddfffffffffgghhh';
 let result_s = '';
 
