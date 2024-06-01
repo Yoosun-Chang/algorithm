@@ -1,1 +1,1 @@
-정글 WEEK01~03을 위한 레포지토리입니다. 
+[js 100제](https://obsidian-scene-3ac.notion.site/JS-100-94d97d294dd14c9b911a02c840fa9f2d) 문제풀이 폴더입니다.
