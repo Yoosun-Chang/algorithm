@@ -23,7 +23,6 @@ function solution(frame, page){
           temp.shift(); 
           temp.push(i);
         }
-        // if문 실행에 상관없이 runTime은 10이 추가된다
         runTime += 6;
       }
     }
