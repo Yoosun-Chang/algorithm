@@ -1,7 +1,7 @@
 function solution(x) {
-    const digitSum = Array.from(String(x), Number).reduce((acc, curr) => acc + curr, 0);
+    let x1 = x.toString().split('');
     
-    const isHarshad = x % digitSum === 0;
+    let sum = x1.reduce((a, b) => Number(a) + Number(b), 0);
     
-    return isHarshad;
+    return x % sum === 0;
 }
