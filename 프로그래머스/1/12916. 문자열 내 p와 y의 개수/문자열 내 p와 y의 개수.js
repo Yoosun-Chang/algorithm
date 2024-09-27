@@ -1,15 +1,19 @@
-function solution(s){
-    var answer = true;
-    let p = 0;
-    let y = 0;
-        for(let i = 0; i<=s.length-1;i++){
-            if(s[i]=='p' || s[i]=='P'){
-                p += 1;
-            }
-            if(s[i]=='y' || s[i]=='Y'){
-                y += 1;
-            }
+function solution(str) {
+    let pCount = 0;
+    let yCount = 0;
+
+    // 대소문자 구분 없애기 위해 모두 소문자로 변환
+    str = str.toLowerCase();
+
+    // 문자열 순회하면서 'p'와 'y' 개수 세기
+    for (let char of str) {
+        if (char === 'p') {
+            pCount++;
+        } else if (char === 'y') {
+            yCount++;
+        }
     }
-    y == p ? answer = true : answer = false  
-    return answer;
+
+    // 'p'와 'y'의 개수가 같으면 true, 다르면 false
+    return pCount === yCount;
 }
