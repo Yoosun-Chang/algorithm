@@ -1,8 +1,9 @@
 function solution(n) {
-    var answer = 0;
-    if(Number.isInteger(Math.sqrt(n))){
-        answer = (Math.sqrt(n)+1)**2;
+    const sqrtN = Math.sqrt(n);
+    
+    if (Number.isInteger(sqrtN)) {
+        return (sqrtN + 1) ** 2;  
+    } else {
+        return -1;  
     }
-    else answer = -1;
-    return answer;
 }
